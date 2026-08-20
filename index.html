@@ -1,0 +1,485 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. Arcidiacono</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #1a1a1a;
+        color: #e9e9e9;
+        line-height: 1.6;
+      }
+      
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        background: #ffffff;
+        border-bottom: 1px solid #e9d985;
+      }
+      
+      .brand {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #749c75;
+        letter-spacing: 0.5px;
+      }
+      
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+      
+      nav a {
+        color: #333333;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+      
+      nav a:hover {
+        color: #749c75;
+      }
+      
+      nav a.cta {
+        background: #749c75;
+        color: #ffffff;
+        padding: 0.6rem 1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      nav a.cta:hover {
+        background: #e9d985;
+        color: #333333;
+        transform: translateY(-2px);
+      }
+      
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #749c75, #b2bd7e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin: 2rem 0 1rem;
+        color: #749c75;
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #b2bd7e;
+        margin-bottom: 0.75rem;
+      }
+      
+      p {
+        margin-bottom: 1.5rem;
+        color: #666666;
+        font-size: 1.05rem;
+      }
+      
+      ul {
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+        list-style: none;
+      }
+      
+      ul li {
+        margin-bottom: 0.75rem;
+        color: #666666;
+      }
+      
+      #about ul,
+      #services ul,
+      #tech-stack ul {
+        margin-left: 1.5rem;
+      }
+      
+      ul.cta-list {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin-left: 0;
+        flex-wrap: wrap;
+      }
+      
+      a.cta {
+        display: inline-block;
+        background: #749c75;
+        color: #ffffff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      a.cta:hover {
+        background: #e9d985;
+        color: #333333;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(116, 156, 117, 0.3);
+      }
+
+      .social-links a,
+      .social-links a:visited,
+      .social-links a:hover,
+      .social-links a:active,
+      .social-links a:focus {
+        color: #749c75;
+      }
+      
+      hr {
+        border: none;
+        border-top: 1px solid #e9d985;
+        margin: 2rem 0;
+      }
+      
+      div > div {
+        margin-bottom: 2rem;
+      }
+      
+      footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid #e9d985;
+        color: #999999;
+        font-size: 0.9rem;
+      }
+      
+      strong {
+        color: #749c75;
+      }
+      
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #333333;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+      
+      @media (max-width: 768px) {
+        nav {
+          flex-wrap: wrap;
+          padding: 1rem 1.5rem;
+        }
+        
+        .menu-toggle {
+          display: block;
+        }
+        
+        nav ul {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          gap: 1rem;
+          margin-top: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid #e9d985;
+        }
+        
+        nav ul.active {
+          display: flex;
+        }
+        
+        nav ul li {
+          width: 100%;
+        }
+        
+        nav a.cta {
+          width: 100%;
+          text-align: center;
+        }
+        
+        main {
+          padding: 2rem 1rem;
+        }
+        
+        h1 {
+          font-size: 1.75rem;
+          margin-bottom: 1rem;
+        }
+        
+        h2 {
+          font-size: 1.4rem;
+          margin: 1.5rem 0 0.75rem;
+        }
+        
+        h3 {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+        
+        p {
+          font-size: 0.95rem;
+          margin-bottom: 1rem;
+        }
+        
+        ul li {
+          font-size: 0.95rem;
+        }
+        
+        a.cta {
+          padding: 0.65rem 1.25rem;
+          font-size: 0.9rem;
+        }
+        
+        ul.cta-list {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+        
+        ul.cta-list li {
+          width: 100%;
+        }
+        
+        ul.cta-list a {
+          width: 100%;
+          text-align: center;
+        }
+        
+        footer {
+          padding: 1.5rem 1rem;
+          font-size: 0.85rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        nav {
+          padding: 1rem;
+        }
+        
+        .brand {
+          font-size: 1rem;
+        }
+        
+        h1 {
+          font-size: 1.5rem;
+        }
+        
+        h2 {
+          font-size: 1.2rem;
+        }
+        
+        main {
+          padding: 1.5rem 1rem;
+        }
+        
+        div > div {
+          margin-bottom: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="brand">J. Arcidiacono</div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul id="navMenu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tech-stack">Tech Stack</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a
+            class="cta"
+            href="https://www.upwork.com/freelancers/~01f44526091c9d20a9?mp_source=share"
+            target="_blank"
+            rel="noopener"
+            >View Upwork Profile</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <h1>Cloud & AI Systems Architecture for Fast-Growing Startups</h1>
+    <p>
+      Scaling fragile MVPs, optimizing AWS infrastructure, and building
+      production-grade AI pipelines. Senior engineering leadership without
+      full-time executive overhead.
+    </p>
+    <ul>
+      <li>
+        <a
+          class="cta"
+          href="https://calendar.app.google/JGHnDByN9pTBUVaU9"
+          target="_blank"
+          rel="noopener"
+          >Schedule an Advisory Call</a
+        >
+      </li>
+      <li>
+        <a class="cta" href="#services">Explore Services</a>
+      </li>
+    </ul>
+    <hr />
+    <div>
+      🎓 PhD Researcher & University Lecturer | ☁️ AWS & Cloud Architecture | 🔒
+      Security & IAM | 🤖 AI Ops & RAG
+    </div>
+    <div id="about">
+      <h2>Bridge the Gap Between Early Code & Production-Grade Scale</h2>
+      <div>
+        I'm Jose Arcidiacono, a Systems Architect and University Lecturer with
+        10+ years of experience designing distributed systems, securing cloud
+        environments, and guiding engineering teams. Whether you need high-level
+        CTO advisory, an audit on AI-generated/fragile codebases, or hands-on
+        infrastructure automation, I help founders turn complex tech stacks into
+        reliable, scalable engines.
+      </div>
+      <ul>
+        <li>
+          <strong>Academic Rigor:</strong> PhD Researcher in Distributed Systems
+          &amp; Lecturer at UNLP.
+        </li>
+        <li>
+          <strong>Global Experience:</strong> Enterprise consulting at Deloitte,
+          Cloud Leadership at SANA, and engineering in Japan (STNet).
+        </li>
+        <li>
+          <strong>Bilingual Delivery:</strong> Smooth technical communication in
+          English, Spanish, and Japanese.
+        </li>
+      </ul>
+    </div>
+    <div id="services">
+      <h2>Services</h2>
+      <div>
+        <h3>Fractional CTO & Architecture Audits</h3>
+        <ul>
+          <li>
+            <strong>Summary:</strong> High-level guidance for startups scaling
+            beyond their initial MVP.
+          </li>
+          <li>
+            <strong>Includes:</strong> Codebase audits (fixing "vibecoded"
+            setups), cloud cost optimization, tech stack selection, and team
+            mentoring.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Cloud Ops & Infrastructure (AWS / DevOps)</h3>
+        <ul>
+          <li>
+            <strong>Summary:</strong> Production-grade deployments designed for
+            zero downtime and security.
+          </li>
+          <li>
+            <strong>Includes:</strong> Infrastructure as Code (Terraform),
+            Docker/Kubernetes orchestration, automated CI/CD pipelines, and IAM
+            hardening.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>AI Infrastructure & Ops</h3>
+        <ul>
+          <li>
+            <strong>Summary:</strong> Moving AI from experimental prototypes to
+            robust production environments.
+          </li>
+          <li>
+            <strong>Includes:</strong> RAG pipelines, dynamic Knowledge Base
+            integrations, automated runbooks, and LLM backend orchestration.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Web Apps & High-Converting Landings</h3>
+        <ul>
+          <li>
+            <strong>Summary:</strong> Rapid, performant frontend and fullstack
+            development backed by architecture experts.
+          </li>
+          <li>
+            <strong>Includes:</strong> High-converting landing pages, custom web
+            portals, responsive design (Angular/React/Node), and seamless API
+            integrations.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="tech-stack">
+      <h2>Tech Stack</h2>
+      <ul>
+        <li>
+          <strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Kubernetes,
+          GitHub Actions, Linux
+        </li>
+        <li>
+          <strong>Backend & Architecture:</strong> Ruby on Rails, Node.js,
+          Python, Java, Microservices, REST/gRPC
+        </li>
+        <li>
+          <strong>Frontend & Web:</strong> Angular, TypeScript, React,
+          HTML5/Tailwind, Responsive UX
+        </li>
+      </ul>
+    </div>
+    <div id="contact">
+      <h2>Ready to Scale Your Tech Stack?</h2>
+      <p>
+        Let's discuss your architecture, audit your codebase, or launch your
+        next web application.
+      </p>
+      <ul>
+        <li>
+          <a class="cta" href="mailto:j2arcidiacono@outlook.com"
+            >Email</a
+          >
+        </li>
+        <li class="social-links">
+            Socials: <a href="https://www.linkedin.com/in/j2-arcidiacono" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/mokocchi" target="_blank" rel="noopener">GitHub</a> | <a href="https://www.upwork.com/freelancers/~01f44526091c9d20a9" target="_blank" rel="noopener">Upwork</a>
+        </li>
+      </ul>
+    </div>
+</div>
+    <footer>
+      <hr />
+      <p>© 2026 Arcidiacono. All rights reserved.</p>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+      
+      // Close menu when a link is clicked
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
+  </body>
+</html>
