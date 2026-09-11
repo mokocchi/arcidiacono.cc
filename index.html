@@ -1,485 +1,110 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J. Arcidiacono</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: #1a1a1a;
-        color: #e9e9e9;
-        line-height: 1.6;
-      }
-      
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem 2rem;
-        background: #ffffff;
-        border-bottom: 1px solid #e9d985;
-      }
-      
-      .brand {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #749c75;
-        letter-spacing: 0.5px;
-      }
-      
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-      }
-      
-      nav a {
-        color: #333333;
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: color 0.3s ease;
-      }
-      
-      nav a:hover {
-        color: #749c75;
-      }
-      
-      nav a.cta {
-        background: #749c75;
-        color: #ffffff;
-        padding: 0.6rem 1rem;
-        border-radius: 6px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-      
-      nav a.cta:hover {
-        background: #e9d985;
-        color: #333333;
-        transform: translateY(-2px);
-      }
-      
-      main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
-      }
-      
-      h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        background: linear-gradient(135deg, #749c75, #b2bd7e);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      h2 {
-        font-size: 1.75rem;
-        font-weight: 700;
-        margin: 2rem 0 1rem;
-        color: #749c75;
-      }
-      
-      h3 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #b2bd7e;
-        margin-bottom: 0.75rem;
-      }
-      
-      p {
-        margin-bottom: 1.5rem;
-        color: #666666;
-        font-size: 1.05rem;
-      }
-      
-      ul {
-        margin-left: 0;
-        margin-bottom: 1.5rem;
-        list-style: none;
-      }
-      
-      ul li {
-        margin-bottom: 0.75rem;
-        color: #666666;
-      }
-      
-      #about ul,
-      #services ul,
-      #tech-stack ul {
-        margin-left: 1.5rem;
-      }
-      
-      ul.cta-list {
-        list-style: none;
-        display: flex;
-        gap: 1rem;
-        margin-left: 0;
-        flex-wrap: wrap;
-      }
-      
-      a.cta {
-        display: inline-block;
-        background: #749c75;
-        color: #ffffff;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-      
-      a.cta:hover {
-        background: #e9d985;
-        color: #333333;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(116, 156, 117, 0.3);
-      }
-
-      .social-links a,
-      .social-links a:visited,
-      .social-links a:hover,
-      .social-links a:active,
-      .social-links a:focus {
-        color: #749c75;
-      }
-      
-      hr {
-        border: none;
-        border-top: 1px solid #e9d985;
-        margin: 2rem 0;
-      }
-      
-      div > div {
-        margin-bottom: 2rem;
-      }
-      
-      footer {
-        text-align: center;
-        padding: 2rem;
-        border-top: 1px solid #e9d985;
-        color: #999999;
-        font-size: 0.9rem;
-      }
-      
-      strong {
-        color: #749c75;
-      }
-      
-      .menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: #333333;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0.5rem;
-      }
-      
-      @media (max-width: 768px) {
-        nav {
-          flex-wrap: wrap;
-          padding: 1rem 1.5rem;
-        }
-        
-        .menu-toggle {
-          display: block;
-        }
-        
-        nav ul {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          gap: 1rem;
-          margin-top: 1rem;
-          padding-top: 1rem;
-          border-top: 1px solid #e9d985;
-        }
-        
-        nav ul.active {
-          display: flex;
-        }
-        
-        nav ul li {
-          width: 100%;
-        }
-        
-        nav a.cta {
-          width: 100%;
-          text-align: center;
-        }
-        
-        main {
-          padding: 2rem 1rem;
-        }
-        
-        h1 {
-          font-size: 1.75rem;
-          margin-bottom: 1rem;
-        }
-        
-        h2 {
-          font-size: 1.4rem;
-          margin: 1.5rem 0 0.75rem;
-        }
-        
-        h3 {
-          font-size: 1rem;
-          margin-bottom: 0.5rem;
-        }
-        
-        p {
-          font-size: 0.95rem;
-          margin-bottom: 1rem;
-        }
-        
-        ul li {
-          font-size: 0.95rem;
-        }
-        
-        a.cta {
-          padding: 0.65rem 1.25rem;
-          font-size: 0.9rem;
-        }
-        
-        ul.cta-list {
-          flex-direction: column;
-          gap: 0.75rem;
-        }
-        
-        ul.cta-list li {
-          width: 100%;
-        }
-        
-        ul.cta-list a {
-          width: 100%;
-          text-align: center;
-        }
-        
-        footer {
-          padding: 1.5rem 1rem;
-          font-size: 0.85rem;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        nav {
-          padding: 1rem;
-        }
-        
-        .brand {
-          font-size: 1rem;
-        }
-        
-        h1 {
-          font-size: 1.5rem;
-        }
-        
-        h2 {
-          font-size: 1.2rem;
-        }
-        
-        main {
-          padding: 1.5rem 1rem;
-        }
-        
-        div > div {
-          margin-bottom: 1.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <div class="brand">J. Arcidiacono</div>
-      <button class="menu-toggle" id="menuToggle">☰</button>
-      <ul id="navMenu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#tech-stack">Tech Stack</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a
-            class="cta"
-            href="https://www.upwork.com/freelancers/~01f44526091c9d20a9?mp_source=share"
-            target="_blank"
-            rel="noopener"
-            >View Upwork Profile</a
-          >
-        </li>
-      </ul>
-    </nav>
-    <h1>Cloud & AI Systems Architecture for Fast-Growing Startups</h1>
-    <p>
-      Scaling fragile MVPs, optimizing AWS infrastructure, and building
-      production-grade AI pipelines. Senior engineering leadership without
-      full-time executive overhead.
-    </p>
-    <ul>
-      <li>
-        <a
-          class="cta"
-          href="https://calendar.app.google/JGHnDByN9pTBUVaU9"
-          target="_blank"
-          rel="noopener"
-          >Schedule an Advisory Call</a
-        >
-      </li>
-      <li>
-        <a class="cta" href="#services">Explore Services</a>
-      </li>
-    </ul>
-    <hr />
-    <div>
-      🎓 PhD Researcher & University Lecturer | ☁️ AWS & Cloud Architecture | 🔒
-      Security & IAM | 🤖 AI Ops & RAG
-    </div>
-    <div id="about">
-      <h2>Bridge the Gap Between Early Code & Production-Grade Scale</h2>
-      <div>
-        I'm Jose Arcidiacono, a Systems Architect and University Lecturer with
-        10+ years of experience designing distributed systems, securing cloud
-        environments, and guiding engineering teams. Whether you need high-level
-        CTO advisory, an audit on AI-generated/fragile codebases, or hands-on
-        infrastructure automation, I help founders turn complex tech stacks into
-        reliable, scalable engines.
-      </div>
-      <ul>
-        <li>
-          <strong>Academic Rigor:</strong> PhD Researcher in Distributed Systems
-          &amp; Lecturer at UNLP.
-        </li>
-        <li>
-          <strong>Global Experience:</strong> Enterprise consulting at Deloitte,
-          Cloud Leadership at SANA, and engineering in Japan (STNet).
-        </li>
-        <li>
-          <strong>Bilingual Delivery:</strong> Smooth technical communication in
-          English, Spanish, and Japanese.
-        </li>
-      </ul>
-    </div>
-    <div id="services">
-      <h2>Services</h2>
-      <div>
-        <h3>Fractional CTO & Architecture Audits</h3>
-        <ul>
-          <li>
-            <strong>Summary:</strong> High-level guidance for startups scaling
-            beyond their initial MVP.
-          </li>
-          <li>
-            <strong>Includes:</strong> Codebase audits (fixing "vibecoded"
-            setups), cloud cost optimization, tech stack selection, and team
-            mentoring.
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>Cloud Ops & Infrastructure (AWS / DevOps)</h3>
-        <ul>
-          <li>
-            <strong>Summary:</strong> Production-grade deployments designed for
-            zero downtime and security.
-          </li>
-          <li>
-            <strong>Includes:</strong> Infrastructure as Code (Terraform),
-            Docker/Kubernetes orchestration, automated CI/CD pipelines, and IAM
-            hardening.
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>AI Infrastructure & Ops</h3>
-        <ul>
-          <li>
-            <strong>Summary:</strong> Moving AI from experimental prototypes to
-            robust production environments.
-          </li>
-          <li>
-            <strong>Includes:</strong> RAG pipelines, dynamic Knowledge Base
-            integrations, automated runbooks, and LLM backend orchestration.
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>Web Apps & High-Converting Landings</h3>
-        <ul>
-          <li>
-            <strong>Summary:</strong> Rapid, performant frontend and fullstack
-            development backed by architecture experts.
-          </li>
-          <li>
-            <strong>Includes:</strong> High-converting landing pages, custom web
-            portals, responsive design (Angular/React/Node), and seamless API
-            integrations.
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="tech-stack">
-      <h2>Tech Stack</h2>
-      <ul>
-        <li>
-          <strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Kubernetes,
-          GitHub Actions, Linux
-        </li>
-        <li>
-          <strong>Backend & Architecture:</strong> Ruby on Rails, Node.js,
-          Python, Java, Microservices, REST/gRPC
-        </li>
-        <li>
-          <strong>Frontend & Web:</strong> Angular, TypeScript, React,
-          HTML5/Tailwind, Responsive UX
-        </li>
-      </ul>
-    </div>
-    <div id="contact">
-      <h2>Ready to Scale Your Tech Stack?</h2>
-      <p>
-        Let's discuss your architecture, audit your codebase, or launch your
-        next web application.
-      </p>
-      <ul>
-        <li>
-          <a class="cta" href="mailto:j2arcidiacono@outlook.com"
-            >Email</a
-          >
-        </li>
-        <li class="social-links">
-            Socials: <a href="https://www.linkedin.com/in/j2-arcidiacono" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://github.com/mokocchi" target="_blank" rel="noopener">GitHub</a> | <a href="https://www.upwork.com/freelancers/~01f44526091c9d20a9" target="_blank" rel="noopener">Upwork</a>
-        </li>
-      </ul>
-    </div>
-</div>
-    <footer>
-      <hr />
-      <p>© 2026 Arcidiacono. All rights reserved.</p>
-    </footer>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Research-grade AWS architecture, security and FinOps consulting by Jose Felipe Arcidiacono." />
+    <meta name="theme-color" content="#1c1c1c" />
+    <title>Jose Felipe Arcidiacono | AWS Architecture & FinOps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu');
-      
-      menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-      });
-      
-      // Close menu when a link is clicked
-      navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-        });
-      });
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#1c1c1c',
+              paper: '#f2eee5',
+              gold: '#f3e1a9',
+              mint: '#b7e4c7',
+              moss: '#607c68'
+            },
+            fontFamily: {
+              sans: ['DM Sans', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif']
+            }
+          }
+        }
+      };
     </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-ink font-sans text-paper antialiased">
+    <header class="site-header" id="top">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10" aria-label="Main navigation">
+        <a href="#top" class="font-display text-sm font-semibold tracking-[0.18em] text-gold">JFA<span class="text-mint">.</span></a>
+        <button class="menu-toggle rounded-full border border-white/20 p-2 text-paper lg:hidden" aria-label="Open menu" aria-expanded="false" data-menu-button>
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+        <div class="hidden items-center gap-8 text-sm text-paper/70 lg:flex" data-menu>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#approach">Approach</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="button button-small" href="https://calendar.app.google/8vZfXHbwAp3f9nVx5" target="_blank" rel="noreferrer">
+            <i data-lucide="arrow-up-right" class="h-4 w-4"></i> Start a conversation
+          </a>
+        </div>
+      </nav>
+      <div class="mobile-menu hidden border-t border-white/10 px-6 pb-6 pt-4 lg:hidden" data-mobile-menu>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a href="mailto:hello@arcidiacono.cc">Start a conversation <i data-lucide="arrow-up-right" class="inline h-4 w-4"></i></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero mx-auto max-w-7xl px-6 pb-24 pt-16 lg:px-10 lg:pb-32 lg:pt-28">
+        <div class="max-w-4xl reveal">
+          <p class="eyebrow"><span class="status-dot"></span> 100% Remote <span class="mx-2 text-paper/30">&bull;</span> Independent advisory &amp; audits</p>
+          <h1 class="mt-8 max-w-5xl font-display text-5xl font-medium leading-[0.98] tracking-[-0.04em] text-paper sm:text-6xl lg:text-8xl">Research-grade <em>AWS</em> architecture, security &amp; FinOps consulting.</h1>
+          <p class="mt-8 max-w-2xl text-lg leading-8 text-paper/65 sm:text-xl">I help startups and engineering teams audit, optimize, and refactor complex AWS infrastructure without slowing down engineering momentum.</p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a class="button button-primary" href="https://calendar.app.google/8vZfXHbwAp3f9nVx5" target="_blank" rel="noreferrer">
+              Book architectural assessment <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+            </a>
+            <a class="button button-ghost" href="#services">Explore services <i data-lucide="arrow-down" class="h-4 w-4"></i></a>
+          </div>
+        </div>
+        <div class="mt-20 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-5 text-xs uppercase tracking-[0.16em] text-paper/45 reveal reveal-delay-1">
+          <span>AWS</span><span>Terraform</span><span>IAM &amp; KMS</span><span>ECS / RDS</span><span>Concurrency &amp; systems</span>
+        </div>
+      </section>
+
+      <section class="band-light px-6 py-24 text-ink lg:px-10 lg:py-32" id="problems">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24">
+            <div class="reveal"><p class="eyebrow eyebrow-dark">The inflection point</p><h2 class="section-title mt-5">When off-the-shelf AWS setup reaches its limits.</h2></div>
+            <div class="grid gap-px overflow-hidden bg-ink/15 sm:grid-cols-3 reveal reveal-delay-1">
+              <article class="problem-card"><span class="card-number">01</span><h3>Runaway cloud bills</h3><p>Uncontrolled autoscaling, oversized instances, and idle resources quietly eroding margins.</p></article>
+              <article class="problem-card"><span class="card-number">02</span><h3>Security blindspots</h3><p>Over-privileged IAM, complex trust relationships, and unverified escalation paths.</p></article>
+              <article class="problem-card"><span class="card-number">03</span><h3>Legacy drift</h3><p>Manual console changes leaving infrastructure unreproducible and hard to reason about.</p></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32" id="services">
+        <div class="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 sm:flex-row sm:items-end reveal"><div><p class="eyebrow">Fixed-price engagements</p><h2 class="section-title mt-5 max-w-2xl">Clarity before complexity.</h2></div><p class="max-w-xs text-sm leading-6 text-paper/55">Focused engagements for teams that need senior judgment, useful artifacts, and forward motion.</p></div>
+        <div class="mt-10 grid gap-4 md:grid-cols-2">
+          <article class="service-card reveal"><div class="service-top"><span class="service-index">01</span><span class="pill">1&ndash;2 weeks <span>&bull;</span> Fixed scope</span></div><h3>AWS security &amp; IAM audit</h3><p>Deep-dive analysis of IAM policies, escalation vectors, KMS keys, and container network isolation.</p><ul><li>Effective permissions &amp; trust policy risk matrix</li><li>VPC &amp; multi-container boundary audit</li><li>Executive assessment report + remediation plan</li></ul><div class="service-bottom"><strong>Starting at $800 <small>USD</small></strong><a href="mailto:hello@arcidiacono.cc?subject=AWS%20Security%20%26%20IAM%20Audit" aria-label="Request security audit"><i data-lucide="arrow-up-right"></i></a></div></article>
+          <article class="service-card reveal reveal-delay-1"><div class="service-top"><span class="service-index">02</span><span class="pill">2 weeks <span>&bull;</span> Fixed scope</span></div><h3>FinOps &amp; AWS cost optimization</h3><p>Comprehensive audit of AWS spending, idle resource detection, and autoscaling optimization.</p><ul><li>Right-sizing analysis &amp; waste elimination roadmap</li><li>Autoscaling guardrails &amp; AWS Budget setup</li><li>Verified line-item monthly savings estimate</li></ul><div class="service-bottom"><strong>Starting at $1,200 <small>USD</small></strong><a href="mailto:hello@arcidiacono.cc?subject=FinOps%20%26%20AWS%20Cost%20Optimization" aria-label="Optimize AWS spend"><i data-lucide="arrow-up-right"></i></a></div></article>
+          <article class="service-card reveal"><div class="service-top"><span class="service-index">03</span><span class="pill">3&ndash;4 weeks <span>&bull;</span> PoC / migration</span></div><h3>Legacy to IaC refactoring</h3><p>Reverse engineering manual or legacy AWS infrastructure into modular, parameterized Terraform code.</p><ul><li>Production-ready Terraform modules</li><li>Remote state, locking &amp; secrets management</li><li>ADRs + a practical handover</li></ul><div class="service-bottom"><strong>Starting at $2,500 <small>USD</small></strong><a href="mailto:hello@arcidiacono.cc?subject=Legacy%20to%20IaC%20Refactoring" aria-label="Start IaC migration"><i data-lucide="arrow-up-right"></i></a></div></article>
+          <article class="service-card service-card-accent reveal reveal-delay-1"><div class="service-top"><span class="service-index">04</span><span class="pill">Monthly retainer <span>&bull;</span> Async + live</span></div><h3>Architecture advisory &amp; mentoring</h3><p>Ongoing technical guidance for Tech Leads, SREs, and engineers tackling distributed systems challenges.</p><ul><li>Dedicated async channel for design reviews</li><li>Bi-weekly architecture &amp; code review sessions</li><li>1-on-1 coaching on concurrency, Kubernetes &amp; AWS</li></ul><div class="service-bottom"><strong>Starting at $600 <small>USD / month</small></strong><a href="mailto:hello@arcidiacono.cc?subject=Architecture%20Advisory" aria-label="Apply for advisory"><i data-lucide="arrow-up-right"></i></a></div></article>
+        </div>
+      </section>
+
+      <section class="band-mint px-6 py-24 text-ink lg:px-10 lg:py-32" id="about"><div class="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24"><div class="reveal"><p class="eyebrow eyebrow-dark">The person behind the work</p><figure class="portrait-frame mt-8"><img src="fibraw.png" alt="Jose Felipe Arcidiacono" /><figcaption>Jose Felipe Arcidiacono<br /><span>Cloud architecture &amp; systems research</span></figcaption></figure><p class="mt-8 max-w-md font-display text-3xl leading-tight sm:text-4xl">Academic rigor meets industry infrastructure engineering.</p></div><div class="reveal reveal-delay-1"><p class="max-w-2xl text-xl leading-8">I am <strong>Jose Felipe Arcidiacono</strong>, a Senior Cloud Architect, Computer Science Researcher, and University Lecturer at UNLP.</p><p class="mt-5 max-w-2xl leading-7 text-ink/65">With 8+ years of experience across AWS infrastructure, FinOps, and enterprise security, I approach cloud engineering with analytical depth rather than trial-and-error.</p><div class="mt-12 grid gap-8 border-t border-ink/20 pt-8 sm:grid-cols-2"><div><strong>Academic researcher</strong><p>Distributed Systems, Algorithms &amp; Computing Theory at UNLP.</p></div><div><strong>Enterprise security</strong><p>Ex-Deloitte Cyber Security Consultant focused on controls and audits.</p></div><div><strong>8+ years in AWS</strong><p>Cloud Architecture, SRE, FinOps and Terraform expertise.</p></div><div><strong>100% independent</strong><p>Milestone-based focus with zero agency overhead.</p></div></div></div></div></section>
+
+      <section class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32" id="approach"><div class="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24"><div class="reveal"><p class="eyebrow">How we work</p><h2 class="section-title mt-5">Structured, non-disruptive engagement.</h2></div><div class="space-y-0 reveal reveal-delay-1"><div class="process-step"><span>01</span><div><h3>Discovery &amp; read-only access</h3><p>We define the scope and set up secure, read-only IAM access without interrupting your engineering team.</p></div></div><div class="process-step"><span>02</span><div><h3>Independent audit &amp; prototyping</h3><p>Deep-dive analysis, security evaluations, or Terraform prototyping happens independently.</p></div></div><div class="process-step"><span>03</span><div><h3>Delivery &amp; walkthrough</h3><p>Clear ADRs, reports, or production-ready code, followed by an executive walkthrough.</p></div></div></div></div></section>
+
+      <section class="cta-band mx-6 mb-6 max-w-7xl px-6 py-16 sm:px-12 lg:mx-auto lg:px-20 lg:py-24 reveal"><p class="eyebrow">Make the next infrastructure decision easier</p><h2 class="mt-6 max-w-3xl font-display text-4xl leading-tight tracking-[-0.03em] text-ink sm:text-6xl">Ready to audit or refactor your AWS infrastructure?</h2><div class="mt-9 flex flex-wrap items-center gap-5"><a class="button button-dark" href="https://calendar.app.google/8vZfXHbwAp3f9nVx5" target="_blank" rel="noreferrer">Schedule assessment call <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a><a class="text-sm font-semibold text-ink/70 underline decoration-ink/30 underline-offset-4" href="mailto:hello@arcidiacono.cc">hello@arcidiacono.cc</a></div></section>
+    </main>
+
+    <footer class="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-xs uppercase tracking-[0.13em] text-paper/40 sm:flex-row sm:items-center sm:justify-between lg:px-10"><span>&copy; <span data-year></span> Jose Felipe Arcidiacono</span><div class="flex gap-6"><a class="footer-link" href="https://www.linkedin.com/in/j2-arcidiacono/" target="_blank" rel="noreferrer">LinkedIn</a><a class="footer-link" href="https://github.com/mokocchi" target="_blank" rel="noreferrer">GitHub</a><a class="footer-link" href="#services">Service catalog</a></div></footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
   </body>
 </html>
