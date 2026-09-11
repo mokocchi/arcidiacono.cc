@@ -8,6 +8,7 @@ body { overflow-x: hidden; }
 .hero:before { content: ''; position: absolute; inset: 0 0 auto 55%; height: 560px; pointer-events: none; background-image: linear-gradient(rgba(243,225,169,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(243,225,169,.08) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent); }
 .eyebrow { color: var(--mint); font-size: .68rem; font-weight: 700; letter-spacing: .17em; line-height: 1.5; text-transform: uppercase; }
 .eyebrow-dark { color: #607c68; }
+.eyebrow-cta { color: var(--ink); }
 .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgba(183,228,199,.1); }
 h1 em { color: var(--gold); font-style: normal; }
 .button { display: inline-flex; align-items: center; gap: .55rem; border: 1px solid transparent; border-radius: 999px; font-size: .8rem; font-weight: 700; line-height: 1; padding: 1rem 1.25rem; transition: transform .2s ease, background .2s ease, color .2s ease; }
